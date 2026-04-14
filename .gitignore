@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+
+# Model weights (large binary files - download separately)
+pretrained_models/
+
+# Generated audio outputs
+outputs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / build
+*.egg-info/
+dist/
+build/
+*.whl
+
+# HuggingFace cache
+.cache/
