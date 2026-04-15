@@ -1,33 +1,55 @@
 # Virtual environment
 .venv/
-
-# Model weights (large binary files - download separately)
-pretrained_models/
-
-# Generated audio outputs
-outputs/
+venv/
+env/
 
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
+*.pycache
+
+# Audio output files (large)
+*.wav
+*.mp3
+*.flac
+*.ogg
+
+# Model weights (large binary files)
+pretrained_models/
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# HuggingFace cache
+.cache/
+huggingface/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
 # IDE
 .idea/
 .vscode/
-*.iml
+*.swp
+*.swo
 
-# OS
-.DS_Store
-Thumbs.db
+# Environment variables
+.env
+.env.local
 
-# Temp / build
-*.egg-info/
-dist/
-build/
-*.whl
+# Results (optional: comment out if you WANT to track results)
+# results.md
 
-# HuggingFace cache
-.cache/
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
