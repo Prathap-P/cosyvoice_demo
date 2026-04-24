@@ -53,3 +53,6 @@ huggingface/
 
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
+
+# CosyVoice source (cloned separately, not tracked)
+cosyvoice_src/
