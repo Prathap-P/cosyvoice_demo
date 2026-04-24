@@ -1,0 +1,70 @@
+# CosyVoice2 requirements — macOS Apple Silicon (M1/M2/M3/M4)
+# Tested and verified working on Python 3.10 + venv (no conda)
+#
+# Key macOS adjustments vs official requirements.txt:
+#   - No CUDA extra-index-url (no CUDA on Apple Silicon)
+#   - tensorrt/deepspeed: linux-only, omitted
+#   - setuptools pinned <71 to restore pkg_resources (split out in v71+)
+#   - wget: unpinned (v3.2 works fine without version pin, needed by Matcha-TTS)
+#   - openai-whisper: unpinned (pinned 20231117 has broken build on venv)
+
+# Build essentials — must come first
+setuptools<71
+wheel
+
+# Core inference
+torch==2.3.1
+torchaudio==2.3.1
+transformers==4.51.3
+diffusers==0.29.0
+conformer==0.3.2
+x-transformers==2.11.24
+
+# Audio processing
+librosa==0.10.2
+soundfile==0.12.1
+pyworld==0.3.4
+
+# Text processing / NLP
+openai-whisper
+wetext==0.0.4
+inflect==7.3.1
+
+# Config & utilities
+omegaconf==2.3.0
+hydra-core==1.3.2
+HyperPyYAML==1.2.3
+numpy==1.26.4
+networkx==3.1
+
+# Model loading & download
+huggingface_hub>=0.23.0
+modelscope==1.20.0
+safetensors
+
+# ML framework support
+lightning==2.2.4
+tensorboard==2.14.0
+
+# ONNX runtime (macOS uses CPU variant)
+onnx==1.16.0
+onnxruntime==1.18.0
+
+# Serialisation / data
+protobuf==4.25
+pyarrow==18.1.0
+pydantic==2.7.0
+
+# API / web (needed by CosyVoice internals)
+fastapi==0.115.6
+fastapi-cli==0.0.4
+uvicorn==0.30.0
+gradio==5.4.0
+grpcio==1.57.0
+grpcio-tools==1.57.0
+
+# Misc utilities
+wget
+gdown==5.1.0
+matplotlib==3.7.5
+rich==13.7.1
